@@ -26,7 +26,7 @@ const plop = (str) => {
       Object.keys(stock).length ===
       Object.keys(objectParamPlayer).length + 1
     ) {
-      // si = 4 il push dans arraPlayer
+      // si = 5 il push dans arraPlayer
       arrayPlayers.push(stock);
       //on reinitialise stock
       stock = {};
