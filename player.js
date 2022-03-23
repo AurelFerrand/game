@@ -12,19 +12,25 @@ let stock = {};
 const arrayPlayers = [];
 
 const plop = (str) => {
+  //si str n'est pas un string = erreur
+  if (typeof str === "string") {
+    stock["player"] = str;
+  } else console.log(`erreur ${typeof str}`);
   // for in pour parcourir object arrayPlayer
   for (let key in objectParamPlayer) {
+    // key parcour object et Numberise l'element
     stock[key] = getMyNumbers();
-
-    if (Object.keys(stock).length === 3) {
-      stock["player"] = str;
+    //si stock n'a pas une longueur en dessous de 4 il continue for in
+    if (Object.keys(stock).length === 4) {
+      // si = 4 il push dans arraPlayer
       arrayPlayers.push(stock);
+      //on reinitialise stock
       stock = {};
     }
   }
 };
-plop("freezer");
+plop("Shanta");
 
-plop("freeaky");
+plop("Freako");
 
 console.log("second", arrayPlayers);
