@@ -5,7 +5,7 @@ const getMyNumbers = () => {
 };
 
 //Tableau de parametres start
-const objectParamPlayer = { power: 0, life: 0, shield: 0 };
+const objectParamPlayer = { power: 0, life: 0, shield: 0, defense: 0 };
 // stock et  initialise parametres
 let stock = {};
 //array des players cree
@@ -20,8 +20,12 @@ const plop = (str) => {
   for (let key in objectParamPlayer) {
     // key parcour object et Numberise l'element
     stock[key] = getMyNumbers();
-    //si stock n'a pas une longueur en dessous de 4 il continue for in
-    if (Object.keys(stock).length === 4) {
+
+    //si stock n'a pas la longeur du paramPlayer + 1 ,  car on ajoute str il continue for in
+    if (
+      Object.keys(stock).length ===
+      Object.keys(objectParamPlayer).length + 1
+    ) {
       // si = 4 il push dans arraPlayer
       arrayPlayers.push(stock);
       //on reinitialise stock
@@ -29,8 +33,15 @@ const plop = (str) => {
     }
   }
 };
+
 plop("Shanta");
 
 plop("Freako");
 
-console.log("second", arrayPlayers);
+plop("Freezer");
+
+console.log(
+  `il y a : ${arrayPlayers.length} joueurs , qui se nomment ${arrayPlayers.map(
+    (p) => p.player
+  )}`
+);
