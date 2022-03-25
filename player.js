@@ -4,8 +4,6 @@ const getMyNumbers = () => {
   return tab;
 };
 
-const chouette = "ta chouette";
-
 //Tableau de parametres start
 const objectParamPlayer = { power: 0, life: 0, shield: 0, defense: 0 };
 // stock et  initialise parametres
@@ -40,30 +38,21 @@ plop("Shanta");
 
 plop("Freako");
 
-plop("Freezer");
+// document.getElementById("player").innerHTML = `il y a : ${
+//   arrayPlayers.length
+// } joueurs , qui se nomment ${arrayPlayers.map((p) => p.player)}`;
 
-console.log(arrayPlayers);
+console.log("arrayPlayer", Object.keys(arrayPlayers[0])); //Choix Object a voir
 
-console.log(
-  `il y a : ${arrayPlayers.length} joueurs , qui se nomment ${arrayPlayers.map(
-    (p) => p.player
-  )}`
-);
-
-const playerFight = arrayPlayers.map((item) => {
-  const container = {};
+const playerConst = arrayPlayers.map((item) => {
+  const container = [];
 
   container.player = item.player;
   container.power = item.power;
-  container.life = item.life - getMyNumbers();
-  container.shield = item.shield - 1;
+  container.life = item.life;
+  container.shield = item.shield;
   container.defense = item.defense;
 
   return container;
 });
-
-console.log(playerFight);
-
-// document.getElementById("player").innerHTML = JSON.stringify(
-//   arrayPlayers.map(({ player, shield }) => ({ player, shield }))
-// );
+console.log("playerFight", playerConst[0].player); //Choix Array a voir
